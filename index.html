@@ -386,8 +386,8 @@
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-hard-hat"></i> Тесты </h1>
-            <p>Проверка знаний </p>
+            <h1><i class="fas fa-hard-hat"></i> Имба Тесты </h1>
+            <p>Проверка твоих лютых знаний </p>
         </header>
         
         <div id="test-selection">
@@ -469,7 +469,12 @@
             document.getElementById('test-selection').style.display = 'none';
             document.getElementById('loading-screen').style.display = 'block';
             
-            const testFile = testId === 'gr1' ? 'gr1.json' : 'gr2.json'; 'gr3.json';  
+            const testFiles = {
+    'gr1': 'gr1.json',
+    'gr2': 'gr2.json', 
+    'gr3': 'gr3.json'
+};
+const testFile = testFiles[testId]; 
             
             fetch(testFile)
                 .then(response => {
